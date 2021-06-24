@@ -1,13 +1,13 @@
 var garden,rabbit;
 var gardenImg,rabbitImg;
-var apple,appleImage,orangeL,orangeImage,redL,redImage;
+var apple,appleImage,orangeL,orangeImage,redL,redImage,grassImage,grass;
 function preload(){
   gardenImg = loadImage("garden.png");
   rabbitImg = loadImage("rabbit.png");
   appleImage = loadImage("apple.png");
   orangeImage = loadImage("orangeLeaf.png");
   redImage = loadImage("redImage.png");
-  
+   grassImage = loadImage("grass.png");
 }
 
 function setup(){
@@ -43,6 +43,7 @@ function draw() {
       createRed();
     }
   }  
+  createGrass();
 }
 
 function createApples(){
@@ -72,4 +73,11 @@ redL=createSprite(random(50,350),40,10,10);
   redL.velocityY=3;
   redL.lifetime=150;
   
+}
+function createGrass(){
+grass=createSprite(random(0,400),390,10,10);
+ grass.addImage(grassImage);
+  grass.scale=0.05;
+ 
+ 
 }
